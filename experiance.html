@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="style\style.css">
+</head>
+<body>
+    <nav >
+        <div id="navbarTogglerDemo01">
+          <ul class="navbar">
+            <li class="nav-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="education.html">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="textWhite" href="experiance.html">My experiances</a>
+            </li>
+            <li class="nav-item">
+                <a href="aboutme.html">About me</a>
+              </li>
+            <li class="nav-item">
+              <a href="cv.html">My Cover Latter</a>
+          </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div class="containerExperiance">
+        <div class="detainContent">
+          <h5>Detail about experiances</h5>
+          <p class="detailEx">
+            I have a lot of experiance with hard skil and soft skill. Please take a look at the diagram
+          </p>
+          <p style="text-align: center; margin-top: 5vh;">
+            <span style="color: red;">Any detail: </span> +885 11 669 454
+          </p>
+        </div>
+
+        <div id="chartContainer" style="height: 300px; width: 40%"></div>
+      </div>
+
+      <script>
+        window.onload = function () {
+        
+        var chart = new CanvasJS.Chart("chartContainer", {
+          theme: "dark1",
+          exportFileName: "Experiaces",
+          exportEnabled: true,
+          animationEnabled: true,
+          title:{
+            text: "Experiaces with programming languages"
+          },
+          legend:{
+            cursor: "pointer",
+            itemclick: explodePie
+          },
+          data: [{
+            type: "doughnut",
+            innerRadius: 90,
+            showInLegend: true,
+            toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+            indexLabel: "{name} - #percent%",
+            dataPoints: [
+              { y: 25, name: "Html,CSS,Javascript" },
+              { y: 30, name: "Python" },
+              { y: 10, name: "Vue JS" },
+              { y: 15, name: "Database" },
+              { y: 15, name: "OOP" },
+              { y: 10, name: "Laravel"},
+              { y: 10, name: "Others" }
+            ]
+          }]
+        });
+        chart.render();
+        
+        function explodePie (e) {
+          if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+          } else {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+          }
+          e.chart.render();
+        }
+        
+        }
+        </script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
