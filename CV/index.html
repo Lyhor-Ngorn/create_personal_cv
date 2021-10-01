@@ -6,29 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
     <link rel="stylesheet" href="style\style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
 </head>
-<body class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link text-light" href="index.html">Home <span class="sr-only">(current)</span></a>
+<body>
+    <nav>
+        <div id="navbar">
+          <ul class="navbar">
+            <li class="nav-item">
+              <a class="textWhite" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="education.html">Education</a>
+              <a href="education.html">Education</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="experiance.html">My experiance</a>
+              <a href="experiance.html">My experiances</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="aboutme.html">About me</a>
-              </li>
+              <a href="aboutme.html">About me</a>
+            </li>
             <li class="nav-item">
-                <a class="nav-link" href="skill.html">My skill</a>
-              </li>
+                <a href="cv.html">My Cover Latter</a>
+            </li>
           </ul>
         </div>
-      </nav>
+    </nav>
+    <div class="containerIndex">
+      <h3 class="greating">Hello, my name is</h3>
+      <h1 id="myName"></h1>
+      <h4 class="objective">I am a <span class="job">web programmer</span></h4>
+      <a href="hire.html"><button class="hire">Hire me</button></a>
+    </div>
+    <img src="img\340872620010201.webp" alt="myPic" class="myPic">
+
+
+
+<!-- Javascript -->
+    <script>
+      var i = 0;
+      var txt = 'Lyhor Ngorn   ';
+      var speed = 400;
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("myName").innerHTML += txt.charAt(i);
+          i++;
+          if(i === txt.length) {
+            document.getElementById("myName").textContent = "L";
+              i = 1;
+          }
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+    </script>
 </body>
 </html>
